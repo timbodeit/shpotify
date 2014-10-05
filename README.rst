@@ -16,21 +16,22 @@ from other machines using SSH. In order to use it:
 
    where <option> is one of
 
-   * status   = Shows Spotify's status, current track details.
-   * play     = Start playing Spotify.
-   * pause    = Pause Spotify.
-   * toggle   = Toggle play/pause state of Spotify.
-   * next     = Go to the next track.
-   * prev     = Go to the previous track.
-   * vol up   = Increase Spotify's volume by 10%
-   * vol down = Increase Spotify's volume by 10%
-   * vol #    = Set Spotify's volume to # [0-100]
-   * share    = Copies the current track share URL to clipboard.
-   * quit     = Quit Spotify.
+   * status     = Shows Spotify's status, current track details.
+   * play       = Start playing Spotify.
+   * play [uri] = Start playing the song, artist or playlist with the given URI.
+   * pause      = Pause Spotify.
+   * toggle     = Toggle play/pause state of Spotify.
+   * next       = Go to the next track.
+   * prev       = Go to the previous track.
+   * vol up     = Increase Spotify's volume by 10%
+   * vol down   = Increase Spotify's volume by 10%
+   * vol #      = Set Spotify's volume to # [0-100]
+   * share      = Copies the current track share URL to clipboard.
+   * quit       = Quit Spotify.
 
 Copyright (c) 2012--2014 Harish Narayanan <mail@harishnarayanan.org>
 
-Contains helpful contributions from Jorge Colindres and Thomas Pritchard.
+Contains helpful contributions from Jorge Colindres, Thomas Pritchard and Tim Bodeit.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

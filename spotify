@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Copyright (c) 2012--2014 Harish Narayanan <mail@harishnarayanan.org>
-# Contains helpful contributions from Jorge Colindres and Thomas Pritchard.
+# Contains helpful contributions from Jorge Colindres, Thomas Pritchard and Tim Bodeit.
 
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -30,6 +30,7 @@ showHelp () {
     echo "Commands:";
     echo "  status             # Shows Spotify's status and current track details.";
     echo "  play               # Play Spotify.";
+    echo "  play [uri]         # Play song, artist or playlist with URI.";
     echo "  pause              # Pause Spotify.";
     echo "  toggle             # Toggle Play / Pause."
     echo "  next               # Go to the next track.";
@@ -64,8 +65,14 @@ while [ $# -gt 0 ]; do
             fi
             break ;;
 
-        "play"    ) echo $bold$green"Playing Spotify.";
-            osascript -e 'tell application "Spotify" to play';
+        "play"    )
+            if [ -z "$2" ]; then
+                echo $bold$green"Playing Spotify.";
+                osascript -e 'tell application "Spotify" to play';
+            elif [[ $2 == spotify:* ]]; then
+                echo $bold$green"Playing $2";
+                osascript -e "tell application \"Spotify\" to play track \"$2\"";
+            fi
             break ;;
 
         "pause"    ) echo $bold$green"Pausing Spotify.";
